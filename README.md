@@ -1,8 +1,23 @@
 # quizz
 
-run `node server.js`
-go on https://console.cloud.google.com/ and create a key for googlesheet
-add file `.env` and set variables
+install node js on your machine https://nodejs.org/en/download
+
+to run it use `node server.js`
+
+configure googlesheet apikey on https://console.cloud.google.com/
+
+api & services > + enable apis and services > google sheets API > enable
+
+on apis & services page > credentials > + create credentials > Oauth Client ID
+
+- application type : web application
+- name: cafedukoin
+- Authorized redirect URIs : http://localhost
+
+save it, you're back on credentials page. You just need to download
+![plot](./assets/capture1.png)
+
+create a file `.env` and complete it with the JSON that you downloaded previously
 
 ````
 GOOGLE_SHEETS_API_KEY_TYPE=
