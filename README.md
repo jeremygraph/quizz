@@ -2,7 +2,6 @@
 
 install node js on your machine https://nodejs.org/en/download
 
-to run it use `node server.js`
 
 configure googlesheet apikey on https://console.cloud.google.com/
 
@@ -35,3 +34,5 @@ SPREADSHEET_ID=
 SHEET_NAME=
 ```
 ````
+
+to run it use `node server.js`
