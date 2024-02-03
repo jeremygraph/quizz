@@ -9,21 +9,21 @@ const client = new tmi.Client({
   connection: {
     reconnect: true,
   },
-  channels: ["cafedukoin"],
+  channels: ["yourChannel"],
 });
 
 client.connect();
 client.on("message", onMessageHandler);
 
 async function onMessageHandler(channel, context, msg, self) {
-  // console.log("channel", {
-  //   channel,
-  //   user: context.username,
-  //   msg,
-  // });
+  console.log("channel", {
+    channel,
+    user: context.username,
+    msg,
+  });
 
   // Check for your command
-  if (msg.startsWith("!quizz")) {
+  if (msg.startsWith("!question")) {
     // Log the username to the spreadsheet
     try {
       const auth = await authenticateWithOAuth();
@@ -70,8 +70,8 @@ async function authenticateWithOAuth() {
 
 async function appendUsernameToSheet(username) {
   try {
-    const spreadsheetId = "1UWyWHOU-4CxxbNrcNHRmyLFRu9kkdIZtt4LZrTp8zc4"; // Replace with your spreadsheet ID
-    const range = "quizz"; // Replace with your sheet name
+    const spreadsheetId = ""; // Replace with your spreadsheet ID
+    const range = "question"; // Replace with your sheet name
 
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId,
